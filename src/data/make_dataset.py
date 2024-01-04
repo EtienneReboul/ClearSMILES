@@ -20,6 +20,9 @@ def main(input_filepath : str, output_filepath: str, output_log : str) -> None:
     # write log
     if output_log:
         file_handler = logging.FileHandler(output_log)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(formatter)
+
         logger.addHandler(file_handler)
 
     logger.info('loading csv file')
@@ -30,8 +33,7 @@ def main(input_filepath : str, output_filepath: str, output_log : str) -> None:
 
 
 if __name__ == '__main__':
-    LOG_FMT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.INFO, format=LOG_FMT)
+    logging.basicConfig(level=logging.INFO)
 
     # argparser
     parser = argparse.ArgumentParser()
