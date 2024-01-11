@@ -91,3 +91,9 @@ target/
 
 # don't keep script to launch slurm job 
 slurm_*.sh
+
+# ignore the core file 
+core.*
+
+# ignore failed task file 
+*failed_task_id.txt

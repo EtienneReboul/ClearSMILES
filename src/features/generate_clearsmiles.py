@@ -239,7 +239,7 @@ def main(input_csv: str,
          nb_smiles : int,
          nb_random : int,
          nb_core : int,
-         job_id : int ,
+         task_id : int ,
          job_array_size : int,
          ) -> None:
     """ generate ClearSMILES for a chunck of csv database 
@@ -252,10 +252,10 @@ def main(input_csv: str,
     # compute the indices of data to be read
     chunk_size= nb_smiles // job_array_size
     nb_unatributed_smiles= nb_smiles % job_array_size
-    first_idx= job_id * chunk_size
-    last_idx= min((job_id+1)*chunk_size,nb_smiles)
-    if job_id <  nb_unatributed_smiles:
-        extra_idx= nb_smiles - (job_id+1)
+    first_idx= task_id * chunk_size
+    last_idx= min((task_id+1)*chunk_size,nb_smiles)
+    if task_id <  nb_unatributed_smiles:
+        extra_idx= nb_smiles - (task_id+1)
     else:
         extra_idx= None
 
@@ -297,7 +297,7 @@ if __name__ == '__main__':
     parser.add_argument('--nb_smiles', help="the number of molecules/smiles for the WHOLE database",
                         default=1_936_962,
                         type=int)
-    parser.add_argument('--job_id', help="the job id in the job array",
+    parser.add_argument('--task_id', help="the job id in the job array",
                         default=0,
                         type=int)
     parser.add_argument('--job_array_size', help="the number of jobs in the job array",
@@ -332,6 +332,6 @@ if __name__ == '__main__':
          nb_smiles= args_dict["nb_smiles"],
          nb_random= args_dict["nb_random"],
          nb_core= args_dict["nb_core"],
-         job_id=args_dict["job_id"],
+         task_id=args_dict["task_id"],
          job_array_size=args_dict["job_array_size"]
          )
