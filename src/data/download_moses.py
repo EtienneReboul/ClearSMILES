@@ -39,13 +39,13 @@ def main(input_url: str, output_filepath: str, output_log: str) -> None:
             csv_file.write(csv_data)
 
         logger.info("CSV file downloaded successfully to %s", output_filepath)
-    
-    except HTTPError as e:
-        logger.debug("HTTP Error (%s): %s",e.code,e.reason)
 
-    except URLError as e:
-        logger.debug("URL Error: %s",e.reason)
- 
+    except HTTPError as error:
+        logger.debug("HTTP Error (%s): %s", error.code, error.reason)
+
+    except URLError as error:
+        logger.debug("URL Error: %s", error.reason)
+
     logger.info('finished')
 
 
@@ -57,15 +57,15 @@ if __name__ == '__main__':
 
     # files & directory arguments
     parser.add_argument('--input_url', help="the url of the MOSES dataset",
-                        default="https://media.githubusercontent.com/media/molecularsets/moses/master/data/dataset_v1.csv"
-                        , type=str)
+                        default="https://media.githubusercontent.com/media/\
+                            molecularsets/moses/master/data/dataset_v1.csv", type=str)
     parser.add_argument('--output_filepath', help="the output file should be a csv",
                         default="data/raw/whole_original_MOSES.csv",
                         type=str)
     parser.add_argument('--output_log', help="the output log path",
                         default="logs/downloading_moses.log",
                         type=str)
-        
+
     # parse and converto dict
     args, _ = parser.parse_known_args()
     args_dict = vars(args)
