@@ -94,39 +94,7 @@ def find_biggest_digits(smiles=str()):
     
     return 0
 
-def get_semantic_mem_map(smiles :str,smiles_regex : re.compile) -> np.array :
-    """
-    This function will generate a semantic memory map of a SMILES, 
-    i.e the number of semantic feature open for every token. 
-    Semantic feature include  branches and  rings 
-        smiles (string) : a valid SMILES 
-        smiles_regex (compiled regular expression): compiled regular expression 
-        used to tokenize SMILES
-        bonds_set (set of strings): a set containing all the bonds tokens
-    output :
-        mem_map  (numpy array):  the semantic memory map of the input SMILES
-    """
-
-    ### declare local variables
-    tokens_list=smiles_regex.findall(smiles)
-    mem_map= np.zeros(len(tokens_list),dtype=int)
-    digit_set=set()
-
-    ### iterate throught tokens 
-    for i,token in enumerate(tokens_list):
-        if token=="(":
-            mem_map[i]+= 1
-        elif token==")":
-            mem_map[i]-=1
-        elif token.isdigit():
-            if token in digit_set:
-                digit_set.remove(token)
-                mem_map[i]-= 1
-            else:
-                digit_set.add(token)
-                mem_map[i]+= 1
-   
-    return mem_map.cumsum()
+ 
 
 def get_clearsmiles(params_dict : dict, nb_random : int, smiles_regex : re.compile("")) -> dict :
     """
