@@ -20,11 +20,11 @@ def test_a_find_biggest_digits():
 
     # acetic acid
     smiles_no_digits = "CC(=O)O"  # No digits in the string
-    assert type(find_biggest_digits(smiles_no_digits)) is int
+    assert isinstance(find_biggest_digits(smiles_no_digits),int)
 
     # aspirin
     smiles_1_digit = "CC(=O)OC1=CC=CC=C1C(=O)O"
-    assert type(find_biggest_digits(smiles_1_digit)) is int
+    assert isinstance(find_biggest_digits(smiles_1_digit),int)
 
 def test_b_find_biggest_digits():
     """test if the function that find the max digit function properly 
