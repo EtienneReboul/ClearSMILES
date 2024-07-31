@@ -8,30 +8,43 @@ import argparse
 import glob
 
 
-def main(search_pattern: str, output_filepath: str, nb_task: int) -> None:
+def main(search_pattern: str, output_filepath: str, job_array_range: str) -> None:
     """  This function will found all finished generation task and check them against
     against the regular number of code 
 
     Args:
         search_pattern (str):  the unix search filepath pattern used to find all finished jobs
         output_filepath (str): the outpout path for file with failed jobs indices
-        nb_task (int):  the number of task in the job array  for the gen of ClearSMILES
+        job_array_range (str):  the range of 
     """
 
     # get  finished task
     finished_tasks = set(glob.glob(search_pattern))
 
-    # check failed task
-    failed_task_id_list = [i for i in range(
-        nb_task) if not search_pattern.replace("*", str(i)) in finished_tasks]
+    # get index range + data casting
+    if "-" in job_array_range and "," in job_array_range:
+        raise ValueError(
+            'the job array should not contains both "-" and "," separator')
+    if "-" in job_array_range:
+        first_idx, last_idx = job_array_range.split("-")
+        jobs2check = range(int(first_idx), int(last_idx)+1)
+    elif "," in job_array_range:
+        jobs2check = [int(idx)for idx in job_array_range.split(",")]
+    else:
+        raise ValueError("the range used for the jobs array, can be \
+                        either a list of jobs,e.g: 1,14,30 or a range : 1-2000")
 
-    # write
+    # check failed task
+    failed_task_id_list = [i for i in jobs2check
+                           if not search_pattern.replace("*", str(i)) in finished_tasks]
+
+    # write to file
     if failed_task_id_list:
-        nb_succesful_task = nb_task - len(failed_task_id_list)
-        sucess_rate = nb_succesful_task/nb_task * 100
-        print(f"{nb_task-len(failed_task_id_list)}/{nb_task} tasks were successfully completed\n")
-        print(f"Thus,there is a {sucess_rate:.2f}% success rate\n")
-        with open(output_filepath, "w",encoding="utf-8") as file:
+        nb_succesful_task = job_array_range - len(failed_task_id_list)
+        sucess_rate = nb_succesful_task/job_array_range * 100
+        print(f"{sucess_rate:.2f}% tasks were successfully completed\n")
+        print(f"writting task id of failed jobs in {output_filepath}")
+        with open(output_filepath, "w", encoding="utf-8") as file:
             failed_task_id_list = [str(i) for i in sorted(failed_task_id_list)]
             file.write(f"{','.join(failed_task_id_list)}\n")
             file.close()
@@ -48,13 +61,14 @@ if __name__ == '__main__':
                          to find finished task",
                         default="data/interim/ClearSMILES_MOSES_subset_*.parquet", type=str)
     parser.add_argument('--output_filepath', help="the output file should be a txt file",
-                        default="failed_task_id.txt",
+                        default="data/external/failed_task_id.txt",
                         type=str)
 
     # data splitting argument
-    parser.add_argument('--job_array_size', help="the number of jobs in the job array",
-                        default=2000,
-                        type=int)
+    parser.add_argument('--job_array_range', help="the range used for the jobs array, can be \
+                        either a list of jobs,e.g: 1,14,30 or a range : 1-2000",
+                        default="1-2000",
+                        type=str)
 
     # parse and converto dict
     args, _ = parser.parse_known_args()
@@ -68,5 +82,5 @@ if __name__ == '__main__':
     # execute main
     main(search_pattern=args_dict["search_pattern"],
          output_filepath=args_dict["output_filepath"],
-         nb_task=args_dict["job_array_size"]
+         job_array_range=args_dict["job_array_size"]
          )

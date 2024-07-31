@@ -9,7 +9,7 @@ from multiprocessing import Pool
 import pandas as pd
 
 
-def main(search_pattern: str, output_filepath: str) -> None:
+def main(search_pattern: str, output_filepath: str , use_multiprocessing : bool) -> None:
     """  This function is used to aggregate all the data into a single parquet
     file
 
@@ -22,13 +22,16 @@ def main(search_pattern: str, output_filepath: str) -> None:
     subset_path_set = set(glob.glob(search_pattern))
 
     # get the number of available cores
-    nb_worker=len(os.sched_getaffinity(0))
+    if use_multiprocessing:
+        nb_worker=len(os.sched_getaffinity(0))
 
-    # get subsets
-    with Pool(nb_worker) as pool:
-        df_list = pool.map(pd.read_parquet, subset_path_set)
-        pool.close()
-        pool.join()
+        # get subsets
+        with Pool(nb_worker) as pool:
+            df_list = pool.map(pd.read_parquet, subset_path_set)
+            pool.close()
+            pool.join()
+    else:
+        df_list=[pd.read_parquet(path) for path in subset_path_set]
 
     # concatenate df
     aggregated_df = pd.concat(df_list, ignore_index=True)
@@ -45,14 +48,13 @@ if __name__ == '__main__':
     parser.add_argument('--search_pattern', help="unix style pathname pattern to \
                         find finished task",
                         default="data/interim/ClearSMILES_MOSES_subset_*.parquet", type=str)
-    parser.add_argument('--output_filepath', help="the output file should be a txt file",
-                        default="failed_task_id.txt",
+    parser.add_argument('--output_filepath', help="the output file should be a parquet file",
+                        default="data/processed/whole_MOSES_ClearSMILES_results.parquet",
                         type=str)
-
-    # data splitting argument
-    parser.add_argument('--job_array_size', help="the number of jobs in the job array",
-                        default=2000,
-                        type=int)
+    parser.add_argument('--use_multiprocessing', help="enable multiprocessing for reading files",
+                        default=False,
+                        action="store_true",
+                        type=bool)
 
     # parse and converto dict
     args, _ = parser.parse_known_args()
@@ -65,4 +67,5 @@ if __name__ == '__main__':
     # execute main
     main(search_pattern=args_dict["search_pattern"],
          output_filepath=args_dict["output_filepath"],
+         use_multiprocessing= args_dict["use_multiprocessing"]
          )
