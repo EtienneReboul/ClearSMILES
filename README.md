@@ -65,7 +65,7 @@ python src/features/generate_clearsmiles.py  --input_csv data/raw/whole_original
 
 <p>First, you need to check if all the jobs have successfully completed using:</p>
 
-<pre><code>python src/features/get_failed_gen_tasks.py --search_pattern data/interim/ClearSMILES_MOSES_subset_*.parquet --output_filepath data/external/failed_task_id.txt
+<pre><code>python src/features/get_failed_gen_tasks.py --search_pattern data/interim/ClearSMILES_MOSES_subset_*.parquet --output_filepath data/external/failed_task_id.txt --job_array_range 1-2000
 </code></pre>
 
 <p>Adjust the search pattern accordingly for a custom dataset. If all tasks were executed successfully, you will get the following message: 'all tasks were successfully completed, no file will be written'. Otherwise, a success rate will be printed, and all the failed task IDs will be written on one line in the output file. After checking the logs for what went wrong, you can relaunch the jobs by replacing the parameter SLURM array range for the ClearSMILES generation like so:</p>
@@ -78,6 +78,10 @@ python src/features/generate_clearsmiles.py  --input_csv data/raw/whole_original
 </code></pre>
 
 <p>You can use multiprocessing to read the file via the use of the flag <code>--use_multiprocessing</code>.</p>
+
+<h2>ClearSMILES property analysis</h2>
+
+<p>To analyse the properties of the ClearSMILES, use  er-01.Notebook in  </p>
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 
