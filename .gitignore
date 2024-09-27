@@ -101,6 +101,7 @@ core.*
 
 #ignore intermdiate svg
 *.svg
+!images/*.svg
 
 # keep results
 !data/processed/compressed_whole_MOSES_ClearSMILES_results.parquet
