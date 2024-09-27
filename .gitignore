@@ -99,5 +99,8 @@ core.*
 # ignore failed task file 
 *failed_task_id.txt
 
+#ignore intermdiate svg
+*.svg
+
 # keep results
 !data/processed/compressed_whole_MOSES_ClearSMILES_results.parquet

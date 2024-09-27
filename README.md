@@ -2,6 +2,10 @@
 
 <p>ClearSMILES is a data augmentation procedure for SMILES. The first goal of CLearSMILES is to minimize the dimensionality of SMILES, i.e., reducing the size of the vocabulary needed to describe a dataset. The second goal of ClearSMILES is to reduce the attention effort a machine learning model has to make to process a SMILES.</p>
 
+<p align="center">
+    <img src="images/graphical_abstract.png" alt="Graphical Abstract">
+</p>
+
 <h2>How to install ClearSMILES</h2>
 
 <p>First, clone the repository:</p>
@@ -81,7 +85,7 @@ python src/features/generate_clearsmiles.py  --input_csv data/raw/whole_original
 
 <h2>ClearSMILES property analysis</h2>
 
-<p>To analyse the properties of the ClearSMILES, use  er-01.Notebook in  </p>
+<p>To analyse the properties of the ClearSMILES, use the dedicated notebook ClearSMILES_analysis.ipynb, to project the semantic map on the 2D structure, use the memory_score.ipynb notebook</p>
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 
