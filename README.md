@@ -3,7 +3,7 @@
 <p>ClearSMILES is a data augmentation procedure for SMILES. The first goal of CLearSMILES is to minimize the dimensionality of SMILES, i.e., reducing the size of the vocabulary needed to describe a dataset. The second goal of ClearSMILES is to reduce the attention effort a machine learning model has to make to process a SMILES.</p>
 
 <p align="center">
-    <img src="images/graphical_abstract.png" alt="Graphical Abstract">
+    <img src="images/graphical_abstract.svg" alt="Graphical Abstract">
 </p>
 
 <h2>How to install ClearSMILES</h2>
