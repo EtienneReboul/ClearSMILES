@@ -1,95 +1,115 @@
-<h1>ClearSMILES</h1>
+# ClearSMILES
 
-<p>ClearSMILES is a data augmentation procedure for SMILES. The first goal of CLearSMILES is to minimize the dimensionality of SMILES, i.e., reducing the size of the vocabulary needed to describe a dataset. The second goal of ClearSMILES is to reduce the attention effort a machine learning model has to make to process a SMILES.</p>
+ClearSMILES is a data augmentation procedure for SMILES. The first goal of CLearSMILES is to minimize the dimensionality of SMILES, i.e., reducing the size of the vocabulary needed to describe a dataset. The second goal of ClearSMILES is to reduce the attention effort a machine learning model has to make to process a SMILES.
 
-<p align="center">
-    <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/dark_mode_graphical_abstract.svg">
-  <source media="(prefers-color-scheme: light)" srcset="light_mode_graphical_abstract.svg">
-  <img alt="Graphical abstract of ClearSMILES paepr">
-</picture>
-</p>
+![Graphical abstract of ClearSMILES paper](images/dark_mode_graphical_abstract.svg)
 
-<h2>How to install ClearSMILES</h2>
+## How to install ClearSMILES
 
-<p>First, clone the repository:</p>
+First, clone the repository:
 
-<pre><code>git clone https://github.com/EtienneReboul/ClearSMILES.git
-cd ClearSMILES/
-</code></pre>
+To install the python dependencies, you can create a virtual env:
 
-<p>To install the python dependencies, you can create a virtual env:</p>
+```bash
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
-<pre><code>pip install virtualenv
-virtualenv ClearSMILES_env
-source ClearSMILES_env/bin/activate
-pip install requirements.txt
-</code></pre>
+# Install dependencies
+pip install -r requirements.txt
+pip install -e .
 
-<p>or</p>
+# Test the installation
+pytest src/test/download_test.py
+```
 
-<p>you can install using conda:</p>
+## Running ClearSMILES on SLURM clusters
 
-<pre><code>conda env create -f ClearSMILES_environement.yml
-</code></pre>
+ClearSMILES is a stochastic data augmentation procedure. Therefore, it is not possible to guarantee that it will always yield the same results. However, by generating a very large number of SMILES (default: 100k randomized SMILES per molecule), the results should be consistent. As random search is time-consuming, the ClearSMILES generation process is designed for cluster parallelization. Here's an example SLURM job:
 
-<h2>How to download MOSES dataset</h2>
-
-<p>The MOSES dataset can be easily downloaded using the following code:</p>
-
-<pre><code>python src/data/download_moses.py
-</code></pre>
-
-<p>The default argument should download the MOSES dataset as whole_original_MOSES.csv in the data/raw directory. You might want to check that the default link to MOSES is still viable using the following:</p>
-
-<pre><code>pytest src/test/download_test.py
-</code></pre>
-
-<h2>How to generate ClearSMILES for MOSES</h2>
-
-<p>ClearSMILES is a stochastic data augmentation procedure. Therefore, it is not possible to guarantee that it will always yield the same results. However, by generating a very large number of SMILES, the default setting is 100k randomized SMILES per molecule, the results should be somewhat consistent. As random search is a time-consuming process, the ClearSMILES generation process is conceived to be parallelized on a cluster. Here is an example of a SLURM job on how to do that:</p>
-
-<pre><code>#!/bin/sh
+```bash
+#!/bin/sh
 #SBATCH --time=01:00:00
 #SBATCH --job-name=ClearSMILES_gen
 #SBATCH --output=logs/ClearSMILES_gen/out_%A_%a.log
 #SBATCH --error=logs/ClearSMILES_gen/err_%A_%a.log
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=4G
+```
+
+## How to download MOSES dataset
+
+The MOSES dataset can be downloaded using:
+
+```bash
+# Download MOSES dataset
+python src/data/download_MOSES.py
+
+# Verify dataset integrity
+pytest src/test/download_test.py
+```
+
+This will download the MOSES dataset to `data/raw/MOSES.csv`. The dataset contains around 2M molecules with their SMILES representation. The download script will also verify the integrity of the downloaded files.
+
+## How to generate ClearSMILES for MOSES
+
+ClearSMILES is a stochastic data augmentation procedure. Therefore, it is not possible to guarantee that it will always yield the same results. However, by generating a very large number of SMILES (default: 100k randomized SMILES per molecule), the results should be consistent. As random search is time-consuming, the ClearSMILES generation process is designed for cluster parallelization.
+
+```bash
+python src/features/concatenate2lib.py \
+  --search_pattern data/interim/ClearSMILES_MOSES_subset_*.parquet \
+  --output_filepath data/processed/whole_MOSES_ClearSMILES_results.parquet
+```
+
+You can enable multiprocessing with the `--use_multiprocessing` flag.
+
+## ClearSMILES property analysis results
+
+To analyze ClearSMILES properties:
+
+- Use `ClearSMILES_analysis.ipynb` for general analysis
+- Use `memory_score.ipynb` to project semantic maps on 2D structures
+
+## Aggregating data and relaunching failed jobs
+
+First, you need to check if all the jobs have successfully completed using:
+When all the tasks are completed, you aggregate all the data to a single file using:
+First, check if all jobs have completed successfully:
+
+```bash
+python src/features/get_failed_gen_tasks.py \
+  --search_pattern data/interim/ClearSMILES_MOSES_subset_*.parquet \
+  --output_filepath data/external/failed_task_id.txt \
+  --job_array_range 1-2000
+```
+
+Adjust the search pattern for custom datasets. If successful, you'll see: 'all tasks were successfully completed, no file will be written'. Otherwise, you'll get a success rate and failed task IDs in the output file.
+
+To relaunch failed jobs, modify the SLURM array range parameter:
+
+```bash
+# Example: Change from
 #SBATCH --array=1-2000
+# to
+#SBATCH --array=3,15,42,1457
+```
 
-# activate virtualenv
-source ClearSMILES_env/bin/activate
+When complete, aggregate the data:
 
-# launch script
-python src/features/generate_clearsmiles.py  --input_csv data/raw/whole_original_MOSES.csv\
- --output_filepath  data/interim/ClearSMILES_MOSES_subset_${SLURM_ARRAY_TASK_ID}.parquet --task_id $SLURM_ARRAY_TASK_ID\
- --job_array_size 2000 --nb_random 100000 --nb_smiles 1936962
-</code></pre>
+```bash
+python src/features/concatenate2lib.py \
+  --search_pattern data/interim/ClearSMILES_MOSES_subset_*.parquet \
+  --output_filepath data/processed/whole_MOSES_ClearSMILES_results.parquet
+```
 
-<p>If you want to use a custom dataset, you need first to give the path to your custom dataset like so: data/raw/custom_dataset.csv. Note that your custom dataset needs to be a CSV file with a ',' as the separator, and the SMILES column should be named 'SMILES' with uppercase. To prevent name collision for the output files, we strongly support using the task ID of the SLURM array to index them. The <code>--nb_smiles</code> should be the number of SMILES, i.e., the number of molecules in your dataset. The task ID and the job array size are used to retrieve the chunk of data to be processed. If you do not want to use a job array (not recommended), you can put <code>--task_id 0</code> and <code>--job_array_size 1</code> to compute all ClearSMILES at once. The flag <code>--nb_random</code> is the number of randomized SMILES that will be generated to search for the best ClearSMILES.</p>
+You can use multiprocessing to read the file with the `--use_multiprocessing` flag.
 
-<h2>Aggregating data and relaunching failed jobs</h2>
+## ClearSMILES property analysis
 
-<p>First, you need to check if all the jobs have successfully completed using:</p>
+To analyze ClearSMILES properties:
 
-<pre><code>python src/features/get_failed_gen_tasks.py --search_pattern data/interim/ClearSMILES_MOSES_subset_*.parquet --output_filepath data/external/failed_task_id.txt --job_array_range 1-2000
-</code></pre>
+- Use `ClearSMILES_analysis.ipynb` for general analysis
+- Use `memory_score.ipynb` to project semantic maps on 2D structures
 
-<p>Adjust the search pattern accordingly for a custom dataset. If all tasks were executed successfully, you will get the following message: 'all tasks were successfully completed, no file will be written'. Otherwise, a success rate will be printed, and all the failed task IDs will be written on one line in the output file. After checking the logs for what went wrong, you can relaunch the jobs by replacing the parameter SLURM array range for the ClearSMILES generation like so:</p>
-
-<p>e.g., <code>#SBATCH --array=1-2000</code> -&gt; <code>#SBATCH --array=3,15,42,1457</code></p>
-
-<p>When all the tasks are completed, you aggregate all the data to a single file using:</p>
-
-<pre><code>python src/features/concatenate2lib.py --search_pattern data/interim/ClearSMILES_MOSES_subset_*.parquet --output_filepath data/processed/whole_MOSES_ClearSMILES_results.parquet
-</code></pre>
-
-<p>You can use multiprocessing to read the file via the use of the flag <code>--use_multiprocessing</code>.</p>
-
-<h2>ClearSMILES property analysis</h2>
-
-<p>To analyse the properties of the ClearSMILES, use the dedicated notebook ClearSMILES_analysis.ipynb, to project the semantic map on the 2D structure, use the memory_score.ipynb notebook</p>
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
-
+---
+*Project based on the [cookiecutter data science project template](https://drivendata.github.io/cookiecutter-data-science/). #cookiecutterdatascience*
