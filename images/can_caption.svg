@@ -1,0 +1,277 @@
+<svg width="1370" height="100" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="30" font-family="Arial" font-size="20" fill="white">Canonical_SMILES</text>
+  <rect x="10" y="41.0" width="96.0" height="24.0" fill="none" />
+  <text x="10" y="60" font-family="Arial" font-size="20" fill="white">smiles: </text>
+  <text x="79.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="91.0" y="41.0" width="12.0" height="24.0" fill="#5e4fa2ff" />
+  <text x="91.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="104.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="116.0" y="41.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="116.0" y="60" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="129.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="141.0" y="41.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="141.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="154.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="166.0" y="41.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="166.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="179.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="191.0" y="41.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="191.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="204.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="216.0" y="41.0" width="12.0" height="24.0" fill="#66c2a5ff" />
+  <text x="216.0" y="60" font-family="Arial" font-size="20" fill="black">(</text>
+  <text x="229.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="241.0" y="41.0" width="12.0" height="24.0" fill="#66c2a5ff" />
+  <text x="241.0" y="60" font-family="Arial" font-size="20" fill="black">C</text>
+  <text x="254.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="266.0" y="41.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="266.0" y="60" font-family="Arial" font-size="20" fill="black">2</text>
+  <text x="279.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="291.0" y="41.0" width="12.0" height="24.0" fill="#e6f598ff" />
+  <text x="291.0" y="60" font-family="Arial" font-size="20" fill="black">(</text>
+  <text x="304.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="316.0" y="41.0" width="12.0" height="24.0" fill="#e6f598ff" />
+  <text x="316.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="329.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="341.0" y="41.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="341.0" y="60" font-family="Arial" font-size="20" fill="black">3</text>
+  <text x="354.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="366.0" y="41.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="366.0" y="60" font-family="Arial" font-size="20" fill="black">n</text>
+  <text x="379.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="391.0" y="41.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="391.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="404.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="416.0" y="41.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="416.0" y="60" font-family="Arial" font-size="20" fill="black">(</text>
+  <text x="429.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="441.0" y="41.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="441.0" y="60" font-family="Arial" font-size="20" fill="black">-</text>
+  <text x="454.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="466.0" y="41.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="466.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="479.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="491.0" y="41.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="491.0" y="60" font-family="Arial" font-size="20" fill="black">4</text>
+  <text x="504.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="516.0" y="41.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="516.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="529.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="541.0" y="41.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="541.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="554.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="566.0" y="41.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="566.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="579.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="591.0" y="41.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="591.0" y="60" font-family="Arial" font-size="20" fill="black">(</text>
+  <text x="604.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="616.0" y="41.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="616.0" y="60" font-family="Arial" font-size="20" fill="black">-</text>
+  <text x="629.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="641.0" y="41.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="641.0" y="60" font-family="Arial" font-size="20" fill="black">n</text>
+  <text x="654.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="666.0" y="41.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="666.0" y="60" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="679.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="691.0" y="41.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="691.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="704.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="716.0" y="41.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="716.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="729.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="741.0" y="41.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="741.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="754.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="766.0" y="41.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="766.0" y="60" font-family="Arial" font-size="20" fill="black">n</text>
+  <text x="779.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="791.0" y="41.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="791.0" y="60" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="804.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="816.0" y="41.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="816.0" y="60" font-family="Arial" font-size="20" fill="black">)</text>
+  <text x="829.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="841.0" y="41.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="841.0" y="60" font-family="Arial" font-size="20" fill="black">n</text>
+  <text x="854.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="866.0" y="41.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="866.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="879.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="891.0" y="41.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="891.0" y="60" font-family="Arial" font-size="20" fill="black">4</text>
+  <text x="904.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="916.0" y="41.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="916.0" y="60" font-family="Arial" font-size="20" fill="black">)</text>
+  <text x="929.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="941.0" y="41.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="941.0" y="60" font-family="Arial" font-size="20" fill="black">n</text>
+  <text x="954.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="966.0" y="41.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="966.0" y="60" font-family="Arial" font-size="20" fill="black">o</text>
+  <text x="979.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="991.0" y="41.0" width="12.0" height="24.0" fill="#e6f598ff" />
+  <text x="991.0" y="60" font-family="Arial" font-size="20" fill="black">3</text>
+  <text x="1004.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1016.0" y="41.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="1016.0" y="60" font-family="Arial" font-size="20" fill="black">)</text>
+  <text x="1029.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1041.0" y="41.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="1041.0" y="60" font-family="Arial" font-size="20" fill="black">C</text>
+  <text x="1054.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1066.0" y="41.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="1066.0" y="60" font-family="Arial" font-size="20" fill="black">C</text>
+  <text x="1079.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1091.0" y="41.0" width="12.0" height="24.0" fill="#66c2a5ff" />
+  <text x="1091.0" y="60" font-family="Arial" font-size="20" fill="black">2</text>
+  <text x="1104.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1116.0" y="41.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="1116.0" y="60" font-family="Arial" font-size="20" fill="black">)</text>
+  <text x="1129.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1141.0" y="41.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="1141.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="1154.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1166.0" y="41.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="1166.0" y="60" font-family="Arial" font-size="20" fill="black">c</text>
+  <text x="1179.0" y="60" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1191.0" y="41.0" width="12.0" height="24.0" fill="#5e4fa2ff" />
+  <text x="1191.0" y="60" font-family="Arial" font-size="20" fill="black">1</text>
+  <rect x="10" y="66.0" width="96.0" height="24.0" fill="none" />
+  <text x="10" y="85" font-family="Arial" font-size="20" fill="white">score:  </text>
+  <text x="79.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="91.0" y="66.0" width="12.0" height="24.0" fill="#5e4fa2ff" />
+  <text x="91.0" y="85" font-family="Arial" font-size="20" fill="black">0</text>
+  <text x="104.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="116.0" y="66.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="116.0" y="85" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="129.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="141.0" y="66.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="141.0" y="85" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="154.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="166.0" y="66.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="166.0" y="85" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="179.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="191.0" y="66.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="191.0" y="85" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="204.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="216.0" y="66.0" width="12.0" height="24.0" fill="#66c2a5ff" />
+  <text x="216.0" y="85" font-family="Arial" font-size="20" fill="black">2</text>
+  <text x="229.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="241.0" y="66.0" width="12.0" height="24.0" fill="#66c2a5ff" />
+  <text x="241.0" y="85" font-family="Arial" font-size="20" fill="black">2</text>
+  <text x="254.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="266.0" y="66.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="266.0" y="85" font-family="Arial" font-size="20" fill="black">3</text>
+  <text x="279.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="291.0" y="66.0" width="12.0" height="24.0" fill="#e6f598ff" />
+  <text x="291.0" y="85" font-family="Arial" font-size="20" fill="black">4</text>
+  <text x="304.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="316.0" y="66.0" width="12.0" height="24.0" fill="#e6f598ff" />
+  <text x="316.0" y="85" font-family="Arial" font-size="20" fill="black">4</text>
+  <text x="329.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="341.0" y="66.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="341.0" y="85" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="354.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="366.0" y="66.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="366.0" y="85" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="379.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="391.0" y="66.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="391.0" y="85" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="404.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="416.0" y="66.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="416.0" y="85" font-family="Arial" font-size="20" fill="black">6</text>
+  <text x="429.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="441.0" y="66.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="441.0" y="85" font-family="Arial" font-size="20" fill="black">6</text>
+  <text x="454.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="466.0" y="66.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="466.0" y="85" font-family="Arial" font-size="20" fill="black">6</text>
+  <text x="479.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="491.0" y="66.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="491.0" y="85" font-family="Arial" font-size="20" fill="black">7</text>
+  <text x="504.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="516.0" y="66.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="516.0" y="85" font-family="Arial" font-size="20" fill="black">7</text>
+  <text x="529.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="541.0" y="66.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="541.0" y="85" font-family="Arial" font-size="20" fill="black">7</text>
+  <text x="554.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="566.0" y="66.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="566.0" y="85" font-family="Arial" font-size="20" fill="black">7</text>
+  <text x="579.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="591.0" y="66.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="591.0" y="85" font-family="Arial" font-size="20" fill="black">8</text>
+  <text x="604.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="616.0" y="66.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="616.0" y="85" font-family="Arial" font-size="20" fill="black">8</text>
+  <text x="629.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="641.0" y="66.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="641.0" y="85" font-family="Arial" font-size="20" fill="black">8</text>
+  <text x="654.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="666.0" y="66.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="666.0" y="85" font-family="Arial" font-size="20" fill="black">9</text>
+  <text x="679.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="691.0" y="66.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="691.0" y="85" font-family="Arial" font-size="20" fill="black">9</text>
+  <text x="704.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="716.0" y="66.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="716.0" y="85" font-family="Arial" font-size="20" fill="black">9</text>
+  <text x="729.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="741.0" y="66.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="741.0" y="85" font-family="Arial" font-size="20" fill="black">9</text>
+  <text x="754.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="766.0" y="66.0" width="12.0" height="24.0" fill="#9e0142ff" />
+  <text x="766.0" y="85" font-family="Arial" font-size="20" fill="black">9</text>
+  <text x="779.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="791.0" y="66.0" width="12.0" height="24.0" fill="#d53e4fff" />
+  <text x="791.0" y="85" font-family="Arial" font-size="20" fill="black">8</text>
+  <text x="804.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="816.0" y="66.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="816.0" y="85" font-family="Arial" font-size="20" fill="black">7</text>
+  <text x="829.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="841.0" y="66.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="841.0" y="85" font-family="Arial" font-size="20" fill="black">7</text>
+  <text x="854.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="866.0" y="66.0" width="12.0" height="24.0" fill="#f46d43ff" />
+  <text x="866.0" y="85" font-family="Arial" font-size="20" fill="black">7</text>
+  <text x="879.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="891.0" y="66.0" width="12.0" height="24.0" fill="#fdae61ff" />
+  <text x="891.0" y="85" font-family="Arial" font-size="20" fill="black">6</text>
+  <text x="904.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="916.0" y="66.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="916.0" y="85" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="929.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="941.0" y="66.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="941.0" y="85" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="954.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="966.0" y="66.0" width="12.0" height="24.0" fill="#fee08bff" />
+  <text x="966.0" y="85" font-family="Arial" font-size="20" fill="black">5</text>
+  <text x="979.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="991.0" y="66.0" width="12.0" height="24.0" fill="#e6f598ff" />
+  <text x="991.0" y="85" font-family="Arial" font-size="20" fill="black">4</text>
+  <text x="1004.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1016.0" y="66.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="1016.0" y="85" font-family="Arial" font-size="20" fill="black">3</text>
+  <text x="1029.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1041.0" y="66.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="1041.0" y="85" font-family="Arial" font-size="20" fill="black">3</text>
+  <text x="1054.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1066.0" y="66.0" width="12.0" height="24.0" fill="#abdda4ff" />
+  <text x="1066.0" y="85" font-family="Arial" font-size="20" fill="black">3</text>
+  <text x="1079.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1091.0" y="66.0" width="12.0" height="24.0" fill="#66c2a5ff" />
+  <text x="1091.0" y="85" font-family="Arial" font-size="20" fill="black">2</text>
+  <text x="1104.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1116.0" y="66.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="1116.0" y="85" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="1129.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1141.0" y="66.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="1141.0" y="85" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="1154.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1166.0" y="66.0" width="12.0" height="24.0" fill="#3288bdff" />
+  <text x="1166.0" y="85" font-family="Arial" font-size="20" fill="black">1</text>
+  <text x="1179.0" y="85" font-family="Arial" font-size="20" fill="black">|</text>
+  <rect x="1191.0" y="66.0" width="12.0" height="24.0" fill="#5e4fa2ff" />
+  <text x="1191.0" y="85" font-family="Arial" font-size="20" fill="black">0</text>
+</svg>
